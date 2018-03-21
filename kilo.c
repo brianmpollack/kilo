@@ -198,6 +198,7 @@ void disableRawMode(int fd) {
 /* Called at exit to avoid remaining in raw mode. */
 void editorAtExit(void) {
     disableRawMode(STDIN_FILENO);
+    printf("\x1b[2J"); //Clear the terminal
 }
 
 /* Raw mode: 1960 magic shit. */
